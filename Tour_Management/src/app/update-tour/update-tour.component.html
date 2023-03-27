@@ -1,0 +1,20 @@
+<h1>Edit Tour Details</h1>
+<form (ngSubmit)="onSubmit()" id="add-tour-form">
+  <div>
+    <label for="tour-name">Tour Name:</label>
+    <input type="text" id="tour-name" name="tour_name" [(ngModel)]="tour.tour_Name" required>
+  </div>
+  <div>
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" [(ngModel)]="tour.destination" required>
+  </div>
+  <div>
+    <label for="from-date">From Date:</label>
+    <input type="date" id="from-date" name="from_date" [(ngModel)]="tour.from_date" required>
+  </div>
+  <div>
+    <label for="to-date">To Date:</label>
+    <input type="date" id="to-date" name="to_date" [(ngModel)]="tour.to_date" required>
+  </div>
+  <button type="submit">Save</button>
+</form>

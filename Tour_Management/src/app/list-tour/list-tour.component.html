@@ -1,0 +1,29 @@
+<h1>Tour Details</h1>
+  <ul>
+    <div class="container">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Tour Name</th>
+            <th>Destination</th>
+            <th>From</th>
+            <th>To</th>
+            <th></th>
+        </thead>
+    <tbody>
+    <tr *ngFor="let tour of tour">
+      <td>{{tour.id}}</td>
+      <td>{{tour.tour_Name}}</td>
+      <td>{{tour.destination}}</td>
+      <td>{{tour.from_date}}</td>
+      <td>{{tour.to_date}}</td>
+      <td>
+        <button (click)="updateTour(tour.id)" class="edit-button">Edit</button>
+        <button (click)="deleteTour(tour.id)" class="delete-button">Delete</button>
+      </td>
+    </tbody>
+    </table>
+    <br>
+    <br>
+  </div>
+  </ul>

@@ -1,0 +1,52 @@
+.navbar {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+  }
+  
+  .nav-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .form-inline {
+    margin-left: auto;
+  }
+  
+  .form-control {
+    background-color: #424242;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: #757575;
+    border: none;
+    color: #ffffff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #424242;
+    color: #ffffff;
+  }
+  
+  .fa-search {
+    color: #ffffff;
+  }
+  
