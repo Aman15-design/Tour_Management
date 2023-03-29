@@ -21,9 +21,15 @@
         <button (click)="updateTour(tour.id)" class="edit-button">Edit</button>
         <button (click)="deleteTour(tour.id)" class="delete-button">Delete</button>
       </td>
+      
     </tbody>
     </table>
+    
     <br>
     <br>
+    <form class="form-inline my-2 my-lg-0" (submit)="searchTour()">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Tour by ID" aria-label="Search" [(ngModel)]="tourId" name="tourId" required>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> 
   </div>
   </ul>

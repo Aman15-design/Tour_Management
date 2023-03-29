@@ -11,7 +11,9 @@ import { Route, Router } from '@angular/router';
 export class ListTourComponent implements OnInit{
 
   tour:Tour[];
-  searchQuery: string = '';
+ 
+  searchResult: Tour;
+  tourId:'';
 
 
   constructor(private service:TourServiceService,private router:Router)
@@ -46,6 +48,12 @@ export class ListTourComponent implements OnInit{
     window.location.reload();
   }
 
-  
+  searchTour() {
+    // Perform search operation using tourId
+    // Update the tour list or navigate to the single tour page
+    this.router.navigate(['show-single-tour',this.tourId]);
+  }
+
+
   
 }
