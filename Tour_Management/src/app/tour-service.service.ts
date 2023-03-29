@@ -39,4 +39,13 @@ export class TourServiceService {
     const new_url=this.baseURL+"/deleteTour/"+id.toString();
     return this.httpClient.post(`${new_url}`,id);
   }
+  getTourById_new(id:String): Observable<Tour>
+  {
+    console.log(id);
+    const new_url=this.baseURL+"/show/"+id;
+    console.log(new_url);
+    return this.httpClient.get<Tour>(`${new_url}`)
+  }
+
+  
 }

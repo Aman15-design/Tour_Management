@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-tour.component.css']
 })
 export class AddTourComponent implements OnInit{
+  errorMsg: string = '';
   tour:Tour = new Tour();
   constructor(private tourservice:TourServiceService, private router:Router){
 
@@ -29,6 +30,11 @@ export class AddTourComponent implements OnInit{
     this.router.navigate(['/tours']);
   }
   onSubmit(){
+    if (new Date(this.tour.to_date) <= new Date(this.tour.from_date)) {
+      // Set the error message
+      this.errorMsg = 'Invalid date range';
+      return;
+    }
     this.savetour();
   }
 

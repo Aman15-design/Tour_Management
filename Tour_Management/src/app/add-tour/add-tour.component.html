@@ -12,9 +12,25 @@
     <label for="from-date">From Date:</label>
     <input type="date" id="from-date" name="from_date" [(ngModel)]="tour.from_date" required>
   </div>
+  <div *ngIf="errorMsg" style="color: red">{{errorMsg}}</div>
   <div>
     <label for="to-date">To Date:</label>
     <input type="date" id="to-date" name="to_date" [(ngModel)]="tour.to_date" required>
+  </div>
+  <div>
+    <label for="visaRequired">Visa Requirements:</label>
+    <input type="radio" id="yes" name="visaRequired" [(ngModel)]="tour.visa_Required" value="yes" required>
+    <label for="Yes">Yes</label>
+    <input type="radio" id="no" name="visaRequired" [(ngModel)]="tour.visa_Required" value="no" required>
+    <label for="No">No</label>
+  </div>
+  <div>
+    <label for="Hotel">Hotel:</label>
+    <input type="text" id="destination" name="Hotel" [(ngModel)]="tour.hotel" required>
+  </div>
+  <div>
+    <label for="Price">Price:</label>
+    <input type="number" id="destination" name="Price" [(ngModel)]="tour.price" required>
   </div>
   <button type="submit">Save</button>
 </form>

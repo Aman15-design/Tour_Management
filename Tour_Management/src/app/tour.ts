@@ -5,4 +5,8 @@ export class Tour {
     destination:string;
     to_date:Date;
     from_date:Date;
+    price : number;
+    hotel : string;
+    visa_Required : string
+    
 }

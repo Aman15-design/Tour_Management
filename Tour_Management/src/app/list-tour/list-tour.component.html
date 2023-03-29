@@ -8,6 +8,9 @@
             <th>Destination</th>
             <th>From</th>
             <th>To</th>
+            <th>Hotel</th>
+            <th>Visa</th>
+            <th>Price</th>
             <th></th>
         </thead>
     <tbody>
@@ -17,6 +20,9 @@
       <td>{{tour.destination}}</td>
       <td>{{tour.from_date}}</td>
       <td>{{tour.to_date}}</td>
+      <td>{{tour.hotel}}</td>
+      <td>{{tour.visa_Required}}</td>
+      <td>${{tour.price}}</td>
       <td>
         <button (click)="updateTour(tour.id)" class="edit-button">Edit</button>
         <button (click)="deleteTour(tour.id)" class="delete-button">Delete</button>

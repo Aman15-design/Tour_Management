@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-tour.component.css']
 })
 export class UpdateTourComponent implements OnInit{
-
+  errorMsg: string = '';
   constructor(private tourservice:TourServiceService, private route:ActivatedRoute,private router:Router){
 
   }
@@ -28,6 +28,12 @@ export class UpdateTourComponent implements OnInit{
     this.router.navigate(['/tours']);
   }
   onSubmit(){
+    
+    if (new Date(this.tour.to_date) <= new Date(this.tour.from_date)) {
+      // Set the error message
+      this.errorMsg = 'Invalid date range';
+      return;
+    }
     this.tourservice.updateTour(this.id,this.tour).subscribe(
       data=> {
         this.goToTourList();
