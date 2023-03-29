@@ -24,14 +24,52 @@ public class Tour_Details {
     @Column(name="TO_DATE")
     private Date To_date;
 
-    public Tour_Details(String tour_Name, Date from_date, Date to_date, String destination) {
+    @Column(name="Hotel")
+    private String Hotel;
+
+    @Column(name="Visa_Required")
+    private String Visa_Required;
+
+    @Column(name="Price")
+    private float Price;
+
+    public String getHotel() {
+        return Hotel;
+    }
+
+    public Tour_Details(String tour_Name, Date from_date, Date to_date, String hotel, String visa_Required, float price,
+            String destination) {
         super();
         Tour_Name = tour_Name;
         From_date = from_date;
         To_date = to_date;
+        Hotel = hotel;
+        Visa_Required = visa_Required;
+        Price = price;
         Destination = destination;
     }
 
+    public void setHotel(String hotel) {
+        Hotel = hotel;
+    }
+
+    public String getVisa_Required() {
+        return Visa_Required;
+    }
+
+    public void setVisa_Required(String visa_Required) {
+        Visa_Required = visa_Required;
+    }
+
+    public float getPrice() {
+        return Price;
+    }
+
+    public void setPrice(float price) {
+        Price = price;
+    }
+
+    
     public Tour_Details()
     {
 

@@ -34,6 +34,9 @@ public class TourService {
         update_tour.setFrom_date(tour.getFrom_date());
         update_tour.setTo_date(tour.getTo_date());
         update_tour.setDestination(tour.getDestination());
+        update_tour.setPrice(tour.getPrice());
+        update_tour.setVisa_Required(tour.getVisa_Required());
+        update_tour.setHotel(tour.getHotel());
         return tour_repo.save(update_tour);
     }
 
