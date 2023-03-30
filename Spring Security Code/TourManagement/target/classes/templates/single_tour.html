@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta charset="ISO-8859-1">
+<head>
+    <title>Show All Tours</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<style>
+  h1 {
+    font-size: 48px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 90%;
+  }
+  
+  th {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .edit-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #da190b;
+  }
+  form {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+</style>
+<body>
+    <h1 th:text="${tour.tour_Name}"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Destination</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Hotel</th>
+                <th>Visa Required</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${tour.id}"></td>
+                <td th:text="${tour.tour_Name}"></td>
+                <td th:text="${tour.destination}"></td>
+                <td th:text="${#dates.format(tour.from_date, 'dd-MM-yyyy')}"></td>
+                <td th:text="${#dates.format(tour.to_date, 'dd-MM-yyyy')}"></td>
+                <td th:text="${tour.hotel}"></td>
+                <td th:text="${tour.visa_Required}"></td>
+                <td th:text="'$' + ${tour.price}"></td>
+                <td>
+                    <form th:action="@{/deleteTour/{id}(id=${tour.id})}" method="post" >
+                      <button class="delete-button" type="submit">Delete</button>
+                    </form>
+                    <form th:action="@{/editTour/{id}(id=${tour.id})}" method="get">
+                        <button class="edit-button" type="submit">Edit</button>
+                      </form>
+                  </td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
